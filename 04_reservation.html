@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+        <title>Luigi's</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+        <link rel="stylesheet" href="fonts/beyond_the_mountains-webfont.css" type="text/css"/>
+
+        <!-- Stylesheets -->
+        <link href="plugin-frameworks/bootstrap.min.css" rel="stylesheet">
+        <link href="plugin-frameworks/swiper.css" rel="stylesheet">
+        <link href="fonts/ionicons.css" rel="stylesheet">
+        <link href="common/styles.css" rel="stylesheet">
+      
+</head>
+<body>
+
+<header id="navbar">
+        <div class="container">
+                <a class="logo" href="#"><img src="images/logo-03.png"  alt="Logo"></a>
+
+                <div class="right-area">
+                        <h6><a class="plr-20 color-white btn-fill-primary" href="tel: +91 848 484 8698">ORDER: +91 84 848 48 698</a></h6>
+                </div><!-- right-area -->
+
+                <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
+
+                <ul class="main-menu font-mountainsre" id="main-menu">
+                    <li><a href="index.html">HOME</a></li>
+                 
+                    <li><a href="03_menu.html">MENU</a></li>
+                    <li><a href="04_reservation.html">RESERVATION</a></li>
+                    <li><a href="offer.html">OFFER</a></li>
+                    <li><a href="02_about_us.html">ABOUT US</a></li>
+                    <li><a href="05_contact.html">CONTACT</a></li>
+            </ul>
+
+                <div class="clearfix"></div>
+        </div><!-- container -->
+</header>
+<script>
+    // When the user scrolls down 20px from the top of the document, slide down the navbar
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        document.getElementById("navbar").style.top = "0";
+        document.getElementById("navbar").style.background = "whitesmoke";
+        document.getElementById("navbar").style.color = "black";
+      } else {
+        document.getElementById("navbar").style.top = "0px";
+        document.getElementById("navbar").style.background = "black";
+        document.getElementById("navbar").style.color = "white";
+      }
+    }
+    </script>
+
+<section class="bg-7 h-500x main-slider pos-relative">
+    
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white pt-90">
+                                <h5><b>THE BEST IN TOWN</b></h5>
+                                <h3 class="mt-30 mb-15">  Reservation</h3>
+                        </div><!-- dplay-tbl-cell -->
+                </div><!-- dplay-tbl -->
+        </div><!-- container -->
+</section>
+
+<div id="reservation" class="reservations-main pad-top-100 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="form-reservations-box">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                            <h3 style="text-align: center;margin:5%;">
+                                Booking Table
+					</h2>
+                        </div>
+                        
+                        <p>PLEASE FILL OUT ALL REQUIRED* FIELDS. THANKS!</p>
+
+                        <form id="contact-form" method="post" class="reservations-box" name="contactform" action="mail.php">
+                                <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="form_name" id="form_name" placeholder="Name" required="required" data-error="Firstname is required.">
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="email" name="email" id="email" placeholder="E-Mail ID" required="required" data-error="E-mail id is required.">
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="phone" id="phone" placeholder="contact no.">
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <select name="no_of_persons" id="no_of_persons" class="selectpicker">
+                                        <option selected disabled>No. Of persons</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>13</option>
+                                        <option>14</option>
+                                        <option>15</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="date" name="date-picker" id="date-picker" placeholder="Date" required="required" data-error="Date is required." />
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="time" name="time-picker" id="time-picker" placeholder="Time" required="required" data-error="Time is required." />
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <select name="preferred_food" id="preferred_food" class="selectpicker">
+                                        <option selected disabled>preferred food</option>
+                                        <option>Indian</option>
+                                        <option>Continental</option>
+                                        <option>Mexican</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <select name="occasion" id="occasion" class="selectpicker">
+                                        <option selected disabled>Occasion</option>
+                                        <option>Wedding</option>
+                                        <option>Birthday</option>
+                                        <option>Anniversary</option>
+                                       <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                                </div>
+                            <!-- end col -->
+                         
+
+                          
+                            <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="03_menu.html" class="btn-primaryc plr-25"><b>Book My Table</b></a></h6>
+                               
+                            <!-- end col -->
+                        </form>
+                        <!-- end form -->
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end reservations-box -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+
+<footer class="pb-50  pt-70 pos-relative">
+        <div class="container-fluid">
+                <a href="index.html"><img src="images/logo-03.png"  style="width:28%;"alt="Logo"></a>
+                <div class="pt-30">
+                    <p class="underline-secondary"><b>Address:</b></p>
+                    <p>206- Mega City Tower, Near SNDT College, <br/>Karve Nagar Road, Kothrud. Pune-38</p>
+            </div>
+
+            <div class="pt-30">
+                    <p class="underline-secondary mb-10"><b>Phone:</b></p>
+                    <a href="tel:+53 345 7953 32453 ">+91 84 8484 8698</a>
+            </div>
+
+            <div class="pt-30">
+                    <p class="underline-secondary mb-10"><b>Email:</b></p>
+                    <a href="mailto:yourmail@gmail.com"> info@cherrymedia.in</a>
+            </div>
+
+                <ul class="icon mt-30">
+                    <li><a href="https://www.facebook.com/cherrymediapune"><i class="ion-social-facebook"></i></a></li>
+                    <!-- <li><a href="#"><i class="ion-social-twitter"></i></a></li> -->
+                    <li><a href="https://www.instagram.com/cherrymediapune"><i class="ion-social-instagram"></i></a></li>
+            </ul>
+
+                <p class="color-light font-9 mt-50 mt-sm-30"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by Cherry Media <i class="ion-heart" aria-hidden="true"></i>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        </div><!-- container -->
+</footer>
+
+<!-- SCIPTS -->
+<script src="plugin-frameworks/jquery-3.2.1.min.js"></script>
+<script src="plugin-frameworks/bootstrap.min.js"></script>
+<script src="plugin-frameworks/swiper.js"></script>
+<script src="common/scripts.js"></script>
+
+
+</body>
+</html>

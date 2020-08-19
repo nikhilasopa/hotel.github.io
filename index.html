@@ -1,0 +1,679 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+        <title>Luigi's</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+        <link rel="stylesheet" href="fonts/beyond_the_mountains-webfont.css" type="text/css"/>
+
+        <!-- Stylesheets -->
+        <link href="plugin-frameworks/bootstrap.min.css" rel="stylesheet">
+        <link href="plugin-frameworks/swiper.css" rel="stylesheet">
+        <link href="fonts/ionicons.css" rel="stylesheet">
+        <link href="common/styles.css" rel="stylesheet">
+        <link href="js/animate/animate.css" rel="stylesheet">
+  
+        <link rel="stylesheet" href="js/camera-slider/camera.css">
+
+        <style>
+                /* slider_area */
+        .slider_area .slider_inner .camera_caption {
+          height: 100%;
+        }
+        .slider_area .slider_inner .camera_caption div {
+          background: transparent;
+          position: absolute;
+          width: 100%;
+          text-align: center;
+          z-index: 1;
+          top: 50%;
+          transform: translateY(-50%);
+          text-transform: uppercase;
+          text-shadow: none;
+          left: 0;
+        }
+        .slider_area .slider_inner .camera_caption div h5 {
+          color: #EF0031;
+          font: 400 24px "Roboto", sans-serif;
+        }
+        .slider_area .slider_inner .camera_caption div h3 {
+          color: #fff;
+          font: 400 30px "Roboto", sans-serif;
+          padding-top: 0px;
+        }
+        .slider_area .slider_inner .camera_caption div p {
+          padding-top: 60px;
+          color: #fff;
+          font: 400 14px/26px "Roboto", sans-serif;
+          max-width: 750px;
+          margin: 0 auto;
+          
+        }
+        .slider_area .slider_inner .camera_caption div a {
+          font: 700 18px/59px "Roboto", sans-serif;
+          width: 180px;
+          text-align: center;
+          background: #EF0031;
+          display: block;
+          text-shadow: none;
+          margin: 0 auto;
+          outline: none !important;
+          box-shadow: none;
+          border: 0;
+        
+          position: relative;
+          z-index: 2;
+          padding: 0;
+        }
+        .slider_area .slider_inner .camera_caption div a:before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          display: block;
+          right: 0;
+          transform: scaleY(0);
+          transform-origin: 50%;
+          transition-property: transform;
+          transition-duration: 0.3s;
+          transition-timing-function: ease-out;
+        }
+        .slider_area .slider_inner .camera_caption div a:hover:before, .slider_area .slider_inner .camera_caption div a:focus:before {
+          transform: scaleY(1);
+        }
+        .slider_area .slider_inner .camera_prev, .slider_area .slider_inner .camera_next {
+          opacity: 1 !important;
+          background-color: transparent;
+        }
+        .slider_area .slider_inner .camera_prev span, .slider_area .slider_inner .camera_next span {
+          display: none;
+        }
+        .slider_area .slider_inner .camera_prev {
+          position: absolute;
+        }
+        .slider_area .slider_inner .camera_prev:after {
+          content: "";
+          position: absolute;
+          top: -20px;
+          background: url("../vendors/camera-slider/images/prev.png") no-repeat;
+          left: 382px;
+          height: 50px;
+          width: 50px;
+        }
+        .slider_area .slider_inner .camera_next:after {
+          content: "";
+          position: absolute !important;
+          top: 0;
+          background: url("../vendors/camera-slider/images/next.png") no-repeat;
+          right: 382px;
+          height: 50px;
+          width: 50px;
+        }
+        .slider_area .slider_inner .camera_fakehover {
+          top: 20px;
+        }
+        
+        /* End slider_area */
+        /* slider_area_tow */
+        .slider_area_tow .slider_inner .camera_caption div .container {
+          width: 1170px !important;
+          text-align: left;
+          position: absolute;
+          top: 250px;
+        }
+        .slider_area_tow .slider_inner .camera_caption div .container p {
+          margin: 0;
+        }
+        .slider_area_tow .slider_inner .camera_caption div .container a {
+          margin: 0;
+        }
+        .slider_area_tow .slider_inner .camera_prev:after {
+          left: 230px;
+        }
+        .slider_area_tow .slider_inner .camera_next:after {
+          right: 230px;
+        }
+      
+        </style>
+      
+
+</head>
+<body>
+
+<header id="navbar" style="background-color: black; ">
+        <div class="container">
+                <a class="logo" href="index.html"><img src="images/logo-03.png" alt="Logo"></a>
+
+                <div class="right-area">
+                        <h6><a class="plr-20 color-white btn-fill-primary" href="tel: +91 848 484 8698">ORDER: +91 84 848 48 698</a></h6>
+                </div><!-- right-area -->
+
+                <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon" ></i></a>
+
+                <ul class="main-menu font-mountainsre" id="main-menu">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="03_menu.html">MENU</a></li>
+                        <li><a href="04_reservation.html">RESERVATION</a></li>
+                        <li><a href="offer.html">OFFER</a></li>
+                        <li><a href="02_about_us.html">ABOUT US</a></li>
+                        <li><a href="05_contact.html">CONTACT</a></li>
+                </ul>
+
+                <div class="clearfix"></div>
+        </div><!-- container -->
+</header>
+<script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+            document.getElementById("navbar").style.top = "0";
+            document.getElementById("navbar").style.background = "whitesmoke";
+            document.getElementById("navbar").style.color = "black";
+            document.getElementByClass("ion-navicon").style.color = "black";
+          } else {
+            document.getElementById("navbar").style.top = "0px";
+            document.getElementById("navbar").style.background = "black";
+            document.getElementById("navbar").style.color = "white";
+          }
+        }
+        </script>
+
+<!-- <section class="bg-1 h-900x main-slider pos-relative">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white">
+
+                                
+                                <h1 class="mt-30 mb-15">Make your memories with food</h1>
+                                <h5><b>The place where speak the good food test</b></h5>
+
+                                <h5><a href="03_menu.html" class="btn-primaryc plr-25" style="margin: 2%;"><b>SEE TODAYS MENU</b></a></h5>
+                        </div>-->
+                        
+                        <!-- dplay-tbl-cell -->
+                <!-- </div>
+        </div>
+</section> -->
+<section class="slider_area row m0" style="margin: 2% 0 0 0 ; padding:1% 0 0 0 ;">
+        <div class="slider_inner">
+            <div data-thumb="images/non-veg.jpg" data-src="images/non-veg.jpg" style="max-width:auto ;
+            height:100%;">
+                <div class="camera_caption">
+                   
+                      
+                        <!-- <h5 class=" wow fadeInUp animated">Welcome to our</h5> -->
+                        <!-- <h1 class=" wow fadeInUp animated" data-wow-delay="0.5s" style="font-family: 'beyond_the_mountainsregular', sans-serif; letter-spacing:7px;font-size:50px;color:blue;">Make your memories with food</h1> -->
+                        <!-- <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Our team of professionals will help you turn your dream home or flat into a reality fast. The Love Boat promises something for everyone. Now the world don't move to the beat of just one</p> -->
+                        <!-- <a class=" wow fadeInUp animated" data-wow-delay="1s" href="#">SEE TODAYS MENU</a> -->
+                   
+                </div>
+            </div>
+            <div data-thumb="images/veg.jpg" data-src="images/veg.jpg">
+                <div class="camera_caption">
+                   
+                        <!-- <h5 class=" wow fadeInUp animated">Welcome to our</h5> -->
+                        <!-- <h1 class=" wow fadeInUp animated" data-wow-delay="0.5s" style="font-family: 'beyond_the_mountainsregular', sans-serif; letter-spacing:7px; font-size:50px;">The place where speak the good food test</h1> -->
+                        <!-- <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Our team of professionals will help you turn your dream home or flat into a reality fast. The Love Boat promises something for everyone. Now the world don't move to the beat of just one</p> -->
+                        <!-- <a class=" wow fadeInUp animated" data-wow-delay="1s" href="#" >SEE TODAYS MENU</a> -->
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<section class="story-area left-text center-sm-text pos-relative">
+        <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
+        <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
+      
+        <div class="container">
+                
+  
+                <div class="row">
+                        <div class="col-md-6">
+                                <h2 style="text-align: center;margin:2%;">Welcome</h2>
+                                <p class="mb-30" style="padding: 0% 0% 0% 7%; 
+                                        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size:20px;">Foodie Hub is much known in one of the the delicious food stuff junction in Pune. It is Place
+                                        where your every wish come’s true. In our restaurant, you will find delicious food, different
+                                        categories of food and tests, know more about us on <a class="logo" href="02_about_us.html"><span style=" font-size:x-large;">&#8250;</span></a></p>
+                                        
+
+                        </div><!-- col-md-6 -->
+
+                        <div class="col-md-6">
+                                <img  src="images/i1.jpg" alt="" style="width: 80% ;margin:0% 0% 0% 10%">
+                        </div><!-- col-md-6 -->
+                </div><!-- row -->
+        </div><!-- container -->
+</section>
+
+<section class="story-area bg-seller color-white pos-relative">
+       
+        <div class="container" >
+        <div style=" background: url(../images/sellers-1-1600x1600.jpg)  no-repeat; background-size: cover; position: relative; z-index: 1; ">
+
+                
+                        <h2 style="text-align: center;margin:2%;">Our Mision</h2>
+                        <p class="mb-30" style="padding: 0% 0% 0% 0%; font-size:25px;color:gray; text-align:justify;">Our mission is simple as that is to give our customers space for their happy movements to celebrate
+                                with their friends and family as well as offering the best food and service. We maintain our quality
+                                and quantity for your satisfaction. It’s our pleasure to give you magnificent services to each person. </p>
+                
+  
+            </div>    
+        </div><!-- container -->
+
+</section>
+
+<section class="story-area left-text center-sm-text pos-relative">
+        
+        <div class="container">
+                
+                <div class="row">
+                        <div class="col-md-6">
+                                <h2 style="text-align: center;margin:2%;">Reservation</h2>
+                                <div id="reservation" class="reservations-main pad-top-100 pad-bottom-100">
+                                        <div class="container">
+                                            <div class="row">
+                                              
+                                                      
+                                                        
+                                                        
+                                
+                                                        <form id="contact-form" method="post" class="reservations-box" name="contactform" action="mail.php">
+                                                                <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="form-box">
+                                                                    <input type="text" name="form_name" id="form_name" placeholder="Name" required="required" data-error="Firstname is required.">
+                                                                </div>
+                                                            </div>
+                                                            <!-- end col -->
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="form-box">
+                                                                    <input type="email" name="email" id="email" placeholder="E-Mail ID" required="required" data-error="E-mail id is required.">
+                                                                </div>
+                                                            </div>
+                                                            <!-- end col -->
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="form-box">
+                                                                    <input type="text" name="phone" id="phone" placeholder="contact no.">
+                                                                </div>
+                                                            </div>
+                                                            <!-- end col -->
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="form-box">
+                                                                    <select name="no_of_persons" id="no_of_persons" class="selectpicker">
+                                                                        <option selected disabled>No. Of persons</option>
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                                        <option>5</option>
+                                                                        <option>6</option>
+                                                                        <option>7</option>
+                                                                        <option>8</option>
+                                                                        <option>9</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                        <option>14</option>
+                                                                        <option>15</option>
+                                
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end col -->
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="form-box">
+                                                                        <!-- <label for="birthday"></label> -->
+                                                                    <input type="date" name="birthday" id="birthday" placeholder="Date" required="required" data-error="Date is required." />
+                                                                </div>
+                                                            </div>
+                                                            <!-- end col -->
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="form-box">
+                                                                       
+                                                                    <input type="time" name="time-picker" id="time-picker" placeholder="Time" required="required" data-error="Time is required." />
+                                                                </div>
+                                                            </div>
+                                                            <!-- end col -->
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="form-box">
+                                                                    <select name="preferred_food" id="preferred_food" class="selectpicker">
+                                                                        <option selected disabled>preferred food</option>
+                                                                        <option>Indian</option>
+                                                                        <option>Continental</option>
+                                                                        <option>Mexican</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end col -->
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="form-box">
+                                                                    <select name="occasion" id="occasion" class="selectpicker">
+                                                                        <option selected disabled>Occasion</option>
+                                                                        <option>Wedding</option>
+                                                                        <option>Birthday</option>
+                                                                        <option>Anniversary</option>
+                                                                       <option>Other</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                                </div>
+                                                            <!-- end col -->
+                                                         
+                                
+                                                          
+                                                            <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="03_menu.html" class="btn-primaryc plr-25"><b>Book My Table</b></a></h6>
+                                                               
+                                                            <!-- end col -->
+                                                        </form>
+                                                        <!-- end form -->
+                                                
+                                              
+                                            </div>
+                                            <!-- end row -->
+                                        </div>
+                                        <!-- end container -->
+                                    </div>
+                                
+                                
+                        </div><!-- col-md-6 -->
+
+                        <div class="col-md-6">
+                                <img  src="images/i1.jpg" alt="" style="width: 80% ;margin:0% 0% 0% 5%;">
+                        </div><!-- col-md-6 -->
+                </div><!-- row -->
+        </div><!-- container -->
+</section>
+
+
+
+
+<!-- <section class="story-area left-text center-sm-text pos-relative">
+        <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
+        <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
+        <div class="container">
+                <div class="heading">
+                        <img class="heading-img" src="images/heading_logo.png" alt="">
+                        <h2>Our Story</h2>
+                </div>
+
+                <div class="row">
+                        <div class="col-md-6">
+                                <p class="mb-30">Maecenas fermentum tortor id fringilla molestie. In hac habitasse
+                                        platea dictumst. Morbi maximus
+                                        lobortis ipsum, ut blandit augue ullamcorper vitae.
+                                        Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel convallis
+                                        massa. Morbi tellus
+                                        tortor, luctus et lacinia non, tincidunt in lacus.
+                                        Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulum id
+                                        dapibus dolor, ac
+                                        cursus nulla. </p> -->
+                        <!-- </div>col-md-6 -->
+<!-- 
+                        <div class="col-md-6">
+                                <p class="mb-30">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea
+                                        dictumst.Morbi maximus lobortis ipsum, ut blandit augue ullamcorper vitae.
+                                        Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel
+                                        convallismassa. Morbi tellus tortor, luctus et lacinia non, tincidunt in lacus.
+                                        Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulumidda
+                                        pibus dolor, accursus nulla. </p>
+                        </div>col-md-6 -->
+                <!-- </div>    row -->
+        <!-- </div>container -->
+<!-- </section> -->
+
+
+<!-- <section class="story-area bg-seller color-white pos-relative">
+        <div class="pos-bottom triangle-up"></div>
+        <div class="pos-top triangle-bottom"></div>
+        <div class="container">
+                <div class="heading">
+                        <img class="heading-img" src="images/heading_logo.png" alt="">
+                        <h2>Best Sellers</h2>
+                </div>
+
+                <div class="row">
+                        <div class="col-lg-3 col-md-4  col-sm-6 ">
+                                <div class="center-text mb-30">
+                                        <div class="ïmg-200x mlr-auto pos-relative">
+                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>OFFER</b></h6>
+                                                <img src="images/seller-2-200x200.png" alt="">
+                                        </div>
+                                        <h5 class="mt-20">Pizza Margherita</h5>
+                                        <h4 class="mt-5"><b>$11.90</b></h4>
+                                        <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
+                                </div>text-center -->
+                        <!-- </div>col-md-3 -->
+
+                <!-- </div>row -->
+
+                <!-- <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="03_menu.html" class="btn-primaryc plr-25"><b>SEE FULL MENU</b></a></h6> -->
+        <!-- </div>container -->
+<!-- </section> -->
+
+
+<section class="story-area bg-seller color-white pos-relative">
+      
+        <div class="container">
+                <div class="heading">
+         
+                        <h2 style="margin: 5%;">Customers Satisfaction</h2>
+                        <h5>We want your best time to spend with us because we have to collect the most precious memories
+                                with us. Give us chance to serve you our love in the form of food, service, and quality.</h5>
+                </div>
+
+                <div class="swiper-container" data-slide-effect="slide" data-autoheight="false" data-swiper-speed="500" data-swiper-margin="25" data-swiper-slides-per-view="3"
+                     data-swiper-breakpoints="true" data-scrollbar="true" data-swiper-loop="true" data-swpr-responsive="[1, 2, 2, 2]">
+
+                        <div class="swiper-wrapper pb-90 pb-sm-60 left-text center-sm-text">
+                                <div class="swiper-slide">
+                                        <h4>Good Food</h4>
+                                        <p class="color-ash mb-50 mb-sm-30 mt-20"> Best food with number of varieties must visit ones</p>
+                                        <img class="circle-60 mb-20 " src="images/quoto-1-200x200.jpg" alt="">
+                                        <h6><b class="color-primary">Priya Somani</b>,<b class="color-ash">Customer</b>
+                                        </h6>
+                                </div><!-- swiper-slide -->
+
+                                <div class="swiper-slide">
+                                        <h4>Amazing </h4>
+                                        <p class="color-ash mb-50 mb-sm-30 mt-20">Good food with good delivery </p>
+                                        <img class="circle-60 mb-20" src="images/quoto-2-200x200.jpg" alt="">
+                                        <h6><b class="color-primary">Suresh Garg</b>,<b class="color-ash">Customer</b>
+                                        </h6>
+                                </div><!-- swiper-slide -->
+
+                                <div class="swiper-slide">
+                                        <h4>The best hotel in town</h4>
+                                        <p class="color-ash mb-50 mb-sm-30 mt-20">Clean hotel super friendly staff thank you Foodie Hub</p>
+                                        <img class="circle-60 mb-20" src="images/quoto-3-200x200.jpg"
+                                             alt="">
+                                        <h6><b class="color-primary">Atul Sharma</b>,<b
+                                                class="color-ash">Customer</b></h6>
+                                </div><!-- swiper-slide -->
+
+                                <div class="swiper-slide">
+                                        <h4>We love it there</h4>
+                                        <p class="color-ash mb-50 mb-sm-30 mt-20">I’m the foodie person finding the good quality food thank you foodie hub </p>
+                                        <img class="circle-60 mb-20"
+                                             src="images/quoto-1-200x200.jpg" alt="">
+                                        <h6><b class="color-primary">Archna Panwar</b>,<b class="color-ash">Customer</b>
+                                        </h6>
+                                </div><!-- swiper-slide -->
+                        </div><!-- swiper-wrapper -->
+
+                        <div class="swiper-pagination"></div>
+                </div><!-- swiper-container -->
+        </div><!-- container -->
+</section>
+
+
+
+
+
+
+
+<section class="bg-lite-blue">
+        <div class="container">
+                <div class="heading">
+                        <img class="heading-img" src="images/heading_logo.png" alt="">
+                        <h2>Our Menu</h2>
+                </div>
+
+                <div class="row">
+                        <div class="col-md-6">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left"><img class="br-3" src="images/non-veg/6.Chilli Egg.jpg" alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>Chilli Egg</b><b class="color-primary float-right">190 RS</b></h5>
+                                                <p class="pr-70">Chill Egg is the tasty and everyone&#39;s favourite dish to enjoy with family
+                                                        and friends. It is covered in spices and fried in oil. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- food-menu -->
+
+                        <div class="col-md-6">
+                                <div class="sided-90x mb-30">
+                                        <div class="s-left"><img class="br-3" src="images/non-veg/7.Dum Chicken.jpg"  alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>	Dum Chicken</b><b class="color-primary float-right">260 RS</b></h5>
+                                                <p class="pr-70">A popular Hyderabadi dish known as Dum ka chicken is a very spicy,
+                                                        sweet-smelling and flavourful dish. Chicken cooked in its juices mixed
+                                                        with lot of spices.</p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- food-menu -->
+                        
+                        <div class="col-md-6">
+                                <div class="sided-90x mb-30">
+                                        <div class="s-left"><img class="br-3" src="images/non-veg/9.Hyderabadi Egg Biryani.jpg"  alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>Hyderabadi Egg Biryani</b><b class="color-primary float-right">320 RS</b></h5>
+                                                <p class="pr-70">Aromatic rice with hard-boiled eggs and perfect masala is a tasty
+                                                        combination that comes together in biryani.</p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- food-menu -->
+                        
+                        <div class="col-md-6">
+                                <div class="sided-90x mb-30">
+                                        <div class="s-left"><img class="br-3" src="images/non-veg/10.The Hundred Foot Journey Omelette  .jpg"  alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>The Hundred Foot Journey Omelette  </b><b class="color-primary float-right">330 RS</b></h5>
+                                                <p class="pr-70">The Hundred-Foot Journey Omelette is the testy and all flavoured dish.
+                                                        The spices, with salt and cooked in a big dip of ghee. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- food-menu -->
+                        
+                        <div class="col-md-6">
+                                <div class="sided-90x mb-30">
+                                        <div class="s-left"><img class="br-3" src="images/non-veg/11.Mutton Chaap.jpg"  alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>Mutton Chaap </b><b class="color-primary float-right">290 RS</b></h5>
+                                                <p class="pr-70">A Classic Mutton chops a masala exploding with incredible flavours. It
+                                                        comes with the delicious and spicy. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- food-menu -->
+                        <div class="col-md-6">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left"><img class="br-3" src="images/veg menu/2.Malai Kofta.jpg" alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>Malai Kofta</b><b class="color-primary float-right">270 RS</b></h5>
+                                                <p class="pr-70">If you are looking smooth and crispy dish then Malai kofta. It is a
+                                                        delicious North Indian specialty dish.</p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- food-menu -->
+
+                        <div class="col-md-6">
+                                <div class="sided-90x mb-30">
+                                        <div class="s-left"><img class="br-3" src="images/veg menu/3.Navaratan Korma.jpg"  alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>Navaratan Korma	</b><b class="color-primary float-right">280 RS</b></h5>
+                                                <p class="pr-70">There is the mantra of every dish of making when you add love every
+                                                        dish looks tasty and beautiful. Navaratan Korma is creamy and testy
+                                                        made with paneer, cream and cashew paste. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- food-menu -->
+
+                        <div class="col-md-6">
+                                <div class="sided-90x mb-30">
+                                        <div class="s-left"><img class="br-3" src="images/veg menu/5.Baingan Bharta.jpg"  alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b>	Baingan Bharta	</b><b class="color-primary float-right">290 RS</b></h5>
+                                                <p class="pr-70">Baingan Bharta a delicious smoky flavour from the roasted baingan,
+                                                        with garlic and onion direct heat and mixing in a spicy masala.
+                                                        Baingan bharta is part of popular cuisine. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- food-menu -->
+                      </div>
+                <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="03_menu.html" class="btn-primaryc plr-25"><b>SEE FULL MENU</b></a></h6>
+        </div><!-- container -->
+</section>
+
+<footer class="pb-50  pt-70 pos-relative">
+     
+        <div class="container-fluid">
+                <div class="nik">
+                <a href="index.html"><img src="images/logo-02.png" alt="Logo" ></a>
+        </div>
+                <div class="pt-30">
+                        <p class="underline-secondary"><b>Address:</b></p>
+                        <p>206- Mega City Tower, Near SNDT College, <br/>Karve Nagar Road, Kothrud. Pune-38</p>
+                </div>
+
+                <div class="pt-30">
+                        <p class="underline-secondary mb-10"><b>Phone:</b></p>
+                        <a href="tel:+53 345 7953 32453 ">+91 84 8484 8698</a>
+                </div>
+
+                <div class="pt-30">
+                        <p class="underline-secondary mb-10"><b>Email:</b></p>
+                        <a href="mailto:yourmail@gmail.com"> info@cherrymedia.in</a>
+                </div>
+
+                <ul class="icon mt-30">
+                        <li><a href="https://www.facebook.com/cherrymediapune"><i class="ion-social-facebook"></i></a></li>
+                        <!-- <li><a href="#"><i class="ion-social-twitter"></i></a></li> -->
+                        <li><a href="https://www.instagram.com/cherrymediapune"><i class="ion-social-instagram"></i></a></li>
+                </ul>
+
+                <p class="color-light font-9 mt-50 mt-sm-30"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by Cherry Media <i class="ion-heart" aria-hidden="true"></i>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        </div><!-- container -->
+</footer>
+
+<!-- SCIPTS -->
+<script src="plugin-frameworks/jquery-3.2.1.min.js"></script>
+<script src="plugin-frameworks/bootstrap.min.js"></script>
+<script src="plugin-frameworks/swiper.js"></script>
+<script src="common/scripts.js"></script>
+<script src="js/jquery-1.12.0.min.js"></script>
+<!-- Bootstrap JS -->
+
+<!-- Animate JS -->
+<script src="js/animate/wow.min.js"></script>
+<!-- Camera Slider -->
+<script src="js/camera-slider/jquery.easing.1.3.js"></script>
+<script src="js/camera-slider/camera.min.js"></script>
+
+<script src="js/theme.js"></script>
+</body>
+</html>
